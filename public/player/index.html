@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>MATCHES LIST</title>
+        <link href="/styles/style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div>
+            <h1>Statistiques du joueur</h1>
+            <h2 id="player-name"></h2>
+        </div>
+        <div id="kd-chart" class="box">
+            <div class="text">K/D</div>
+            <div id="kd-value"></div>
+            <div id="kd-chart-container">
+                <canvas id="kd-chart-canvas"></canvas>
+            </div>
+        </div>
+        <div id="winrate-container" class="box">
+            <div class="text">Winrate</div>
+            <div id="winrate-value"></div>
+            <div class="text">Matches</div>
+            <div id="matches"></div>
+            <div class="text">Victoires</div>
+            <div id="won"></div>
+            <div class="text">Défaites</div>
+            <div id="lost"></div>
+        </div>
+        <div id="hs-container" class="box">
+            <div class="text">HS%</div>
+            <div id="hs-value"></div>
+            <div class="text">Kills</div>
+            <div id="kills"></div>
+            <div class="text">Morts</div>
+            <div id="deaths"></div>
+            <div class="text">Assistances</div>
+            <div id="assists"></div>
+            <div class="text">Headshots</div>
+            <div id="hs"></div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.js"></script>
+        <script src="/js/script.js"></script>
+        <script src="/player/index.js"></script>
+    </body>
+</html>
