@@ -1,6 +1,7 @@
 .team-name-table {
     padding-left: 10px;
-    padding-bottom: 40px;
+    padding-top: 25px;
+    padding-bottom: 25px;
 }
 
 .team-name-small {
@@ -48,19 +49,37 @@
 }
 
 .green {
-    color:  #78e08f;
+    color:  #10ac84;
 }
 
 .green-background {
-    background-color:  #78e08f;
+    background-color:  #10ac84;
 }
 
 .red {
-    color: #eb2f06
+    color: #eb2f06;
 }
 
 .red-background {
     background-color: #eb2f06;
+}
+
+.blue {
+    color: #0c2461
+}
+
+.blue-background {
+    background-color: #0c2461;
+    color: white;
+}
+
+.orange {
+    color: #e58e26;
+}
+
+.orange-background {
+    background-color: #e58e26;
+    color: white;
 }
 
 .map-name {
@@ -73,4 +92,11 @@ abbr {
     text-decoration: none;
     text-transform: none;
     cursor: help;
+}
+
+.rating {
+    text-align: center;
+    margin: 0 auto;
+    width: 40px;
+    border-radius: 4px;
 }

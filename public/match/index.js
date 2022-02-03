@@ -71,13 +71,13 @@ async function generateMatchStats(){
     if(infos[0].winner == "team1"){
         document.querySelector("#team1-table-head").classList.add("green-background");
         document.querySelector("#team1-score").classList.add("green");
-        document.querySelector("#team2-table-head").classList.add("red-background");
+        //document.querySelector("#team2-table-head").classList.add("red-background");
         document.querySelector("#team2-score").classList.add("red");
     }
     else{
         document.querySelector("#team1-table-head").classList.add("red-background");
         document.querySelector("#team1-score").classList.add("red");
-        document.querySelector("#team2-table-head").classList.add("green-background");
+        //document.querySelector("#team2-table-head").classList.add("green-background");
         document.querySelector("#team2-score").classList.add("green");
     }
 
@@ -108,12 +108,16 @@ async function generateMatchStats(){
         newElement("td",player.kills,undefined,row);
         newElement("td",player.deaths,undefined,row);
         newElement("td",player.assists,undefined,row);
-        newElement("td",player.kills-player.deaths,undefined,row);
+        if(player.kills-player.deaths >= 0) newElement("td",player.kills-player.deaths,"green",row);
+        else newElement("td",player.kills-player.deaths,"red",row);
         newElement("td",(player.kills/player.deaths).toFixed(2),undefined,row);
         newElement("td",(player.headshot_kills*100/player.kills).toFixed(0)+"%",undefined,row);
         newElement("td",(player.damage/player.rounds_played).toFixed(1),undefined,row);
         newElement("td",player.kast+"%",undefined,row);
-        newElement("td",ratingCalculator(player).toFixed(2),undefined,row);
+        var rating = ratingCalculator(player);
+        var cell = newElement("td","",undefined,row)
+        if(rating >= 1) newElement("div",ratingCalculator(player).toFixed(2),["rating","green-background"],cell);
+        else newElement("div",ratingCalculator(player).toFixed(2),["rating","red-background"],cell);
         newElement("td",player.enemies_flashed,undefined,row);
         newElement("td",player.flashbang_assists,["special","unwrap"],row);
         newElement("td",player.utility_damage,["special","unwrap"],row);

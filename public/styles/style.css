@@ -4,6 +4,9 @@ body {
 
 table, th, td {
     text-align: center;
+	font-size: 16px;
+	padding-top: 3px;
+	padding-bottom: 3px;
 }
 
 table {
